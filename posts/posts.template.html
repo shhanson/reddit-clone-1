@@ -43,6 +43,7 @@
       </div>
 
       <div class='form-group'>
+        <button class='btn' ng-click='newPostClicked=!newPostClicked'>Cancel</button>
         <button type='submit' class="btn btn-primary" ng-click='$ctrl.addPost()'>Submit Post</button>
       </div>
 
@@ -70,7 +71,7 @@
           <p> {{ post.body }}</p>
 
           <div>
-            Some time ago | <comments></comments>
+            {{ $ctrl.dateDisplay(post.date) }} | <comments></comments>
           </div>
 
         </div>
