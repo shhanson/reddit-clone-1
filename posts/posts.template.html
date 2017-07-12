@@ -1,23 +1,29 @@
 <button ng-click='newPostClicked = !newPostClicked'>New post</button>
 
-<form ng-show='newPostClicked'>
-  <label for='title'>Title</label>
-  <input type='text' ng-model='$ctrl.post.title' id='title'>
+<section>
+  <form ng-show='newPostClicked'>
+    <label for='title'>Title</label>
+    <input type='text' ng-model='$ctrl.post.title' id='title'>
 
-  <label for='author'>Author</label>
-  <input type='text' ng-model='$ctrl.post.author' id='author'>
+    <label for='author'>Author</label>
+    <input type='text' ng-model='$ctrl.post.author' id='author'>
 
-  <label for='body'>Body</label>
-  <textarea ng-model='$ctrl.post.body' id='body'></textarea>
+    <label for='body'>Body</label>
+    <textarea ng-model='$ctrl.post.body' id='body'></textarea>
 
-  <label for='imageURL'>Image URL</label>
-  <input type='text' ng-model='$ctrl.post.imageURL' id='imageURL'>
+    <label for='imageURL'>Image URL</label>
+    <input type='text' ng-model='$ctrl.post.imageURL' id='imageURL'>
 
-  <button ng-click='$ctrl.addPost()'>Submit</button>
+    <button ng-click='$ctrl.addPost()'>Submit</button>
 
-</form>
+  </form>
+</section>
 
-<section ng-repeat='post in $ctrl.posts'>
+<section>
+  <input type='text' ng-model='filterInput' id='filter' placeholder='Filter'>
+</section>
+
+<section ng-repeat='post in $ctrl.posts | filter: {title: filterInput}'>
 
   <img ng-src='{{ post.imageURL }}'>
   <h3>{{ post.title }}</h3>
