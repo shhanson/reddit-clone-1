@@ -1,4 +1,14 @@
-<section ng-repeat='comment in $ctrl.comments'>
-  <p> {{ comment.author }} </p>
+
+<a ng-click="showCommentsClicked = !showCommentsClicked">Comments</a>
+
+
+
+<section ng-show='showCommentsClicked' ng-repeat='comment in $ctrl.comments'>
   <p> {{ comment.body }} </p>
 </section>
+
+<form ng-show='showCommentsClicked'>
+  <input type='text' id='body' ng-model='$ctrl.comment.body'>
+  <button ng-click='$ctrl.addComment()'>Submit</button>
+
+</form>
