@@ -4,11 +4,11 @@
 
 <ul class="nav nav-pills">
     <li role="presentation" class="active">
-      <input type="search" class="form-control input-sm search-form" placeholder="Filter" ng-model='filterInput' id='filter'>
+      <input type="search" class="form-control input-sm search-form" placeholder="Filter" ng-model='filterInput' name='filter'>
     </li>
     <div class="form-inline">
       <label for="sort" class='left-pad'>  Sort by </label>
-      <select class="form-control" id="sort" ng-model='sortSelected'>
+      <select class="form-control" name="sort" ng-model='sortSelected'>
         <option selected value='-id'>Date (newest first)</option>
         <option value='-votes'>Votes (highest first)</option>
         <option value='title'>Title</option>
@@ -23,7 +23,7 @@
     <form name='newPostForm' novalidate>
       <div class='form-group' ng-class='{"has-error": newPostForm.title.$touched && newPostForm.title.$invalid}'>
         <label for='title'>Title</label>
-        <input type='text' ng-model='$ctrl.post.title' name='title' class='form-control form-control-danger'  required>
+        <input type='text' ng-model='$ctrl.post.title' name='title' class='form-control form-control-danger' required>
       </div>
 
 
@@ -44,7 +44,7 @@
 
       <div class='form-group'>
 
-        <button type='submit' class="btn btn-primary" ng-click='$ctrl.addPost()' ng-disabled='newPostForm.$invalid' focus>Submit Post</button>
+        <button type='submit' class="btn btn-primary" ng-click='$ctrl.addPost()' ng-disabled='newPostForm.$invalid'>Submit Post</button>
         <button class='btn' ng-click='newPostClicked=!newPostClicked'>Cancel</button>
       </div>
 

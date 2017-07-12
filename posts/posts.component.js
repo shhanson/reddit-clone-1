@@ -10,19 +10,19 @@
         vm.$onInit = function onInit() {
           vm.posts.push({
             id: 0,
-            title: 'Test Post 1 Title',
-            author: 'bigrig',
-            body: 'FIRSTTT!!! LOLLLL',
-            imageURL: 'http://via.placeholder.com/150x150',
+            title: 'Darmok',
+            author: 'Jalad',
+            body: 'Picard is captured, then trapped on a planet with an alien captain who speaks a metaphorical language incompatible with the universal translator. They must learn to communicate with each other before a deadly planetary beast overwhelms them.',
+            imageURL: 'https://vignette3.wikia.nocookie.net/memoryalpha/images/0/04/5x02_Darmok_title_card.jpg/revision/latest/scale-to-width-down/350?cb=20160711014651&path-prefix=en',
             date: new Date(),
             votes: 0,
           });
           vm.posts.push({
             id: 1,
-            title: 'Test Post 2 Title',
-            author: 'jesse',
-            body: 'Hello, world!',
-            imageURL: 'http://via.placeholder.com/150x150',
+            title: 'Current Feels',
+            author: 'gudetama',
+            body: 'Please send help, thx.',
+            imageURL: 'http://data.whicdn.com/images/167559368/superthumb.jpg',
             date: new Date(),
             votes: 0,
           });
