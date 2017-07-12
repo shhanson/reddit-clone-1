@@ -6,21 +6,18 @@
 
         vm.comments = [];
         vm.comment = {};
-        vm.$onInit = function onInit() {
-          // vm.comments.push({
-          //   postID: 0,
-          //   body: 'lmao',
-          // });
-          // vm.comments.push({
-          //   postID: 1,
-          //   author: 'clownbaby',
-          //   body: 'testes 1, 2...uh oh!',
-          // });
-        };
 
         vm.addComment = function addComment() {
+          if (!vm.comment.body) {
+            console.error('Comment cannot be blank!');
+            return;
+          }
           vm.comments.push(vm.comment);
           vm.comment = {};
+        };
+
+        vm.getCommentCount = function getCommentCount() {
+          return vm.comments.length;
         };
       },
       templateUrl: '/comments/comments.template.html',

@@ -25,6 +25,10 @@
         };
 
         vm.addPost = function addPost() {
+          if (!vm.post.body || !vm.post.title || !vm.post.author || !vm.post.imageURL) {
+            console.error('Missing stuff!');
+            return;
+          }
           vm.post.id = vm.posts.length;
           vm.posts.push(vm.post);
           vm.post = {};
