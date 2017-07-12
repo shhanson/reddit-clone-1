@@ -9,7 +9,6 @@
           vm.comment = {};
         };
 
-
         vm.addComment = function addComment() {
           if (!vm.comment.body) {
             console.error('Comment cannot be blank!');
