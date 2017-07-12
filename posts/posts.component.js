@@ -15,6 +15,7 @@
             body: 'FIRSTTT!!! LOLLLL',
             imageURL: 'http://via.placeholder.com/150x150',
             date: new Date(),
+            votes: 0,
           });
           vm.posts.push({
             id: 1,
@@ -23,6 +24,7 @@
             body: 'Hello, world!',
             imageURL: 'http://via.placeholder.com/150x150',
             date: new Date(),
+            votes: 0,
           });
         };
 
@@ -33,13 +35,25 @@
           }
           vm.post.id = vm.posts.length;
           vm.post.date = new Date();
+          vm.post.votes = 0;
           vm.posts.push(vm.post);
           vm.post = {};
         };
 
+        vm.upvote = function upvote(postID) {
+          vm.posts[postID].votes++;
+          // vm.post.votes++;
+        };
+
+        vm.downvote = function downvote(postID) {
+          if (vm.posts[postID].votes > 0) {
+            vm.posts[postID].votes--;
+          }
+        };
+
         vm.dateDisplay = function dateDisplay(timestamp) {
           const now = new Date();
-          const secondsPast = parseInt((now.getTime() - timestamp.getTime()) / 1000);
+          const secondsPast = parseInt((now.getTime() - timestamp) / 1000);
 
           if (secondsPast < 60) {
             // return `${secondsPast} second${(secondsPast !== 1) ? 's' : ''}`;
