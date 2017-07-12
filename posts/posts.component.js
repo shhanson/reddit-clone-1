@@ -1,5 +1,5 @@
 (function () {
-  angular.module('posts', [])
+  angular.module('app')
     .component('posts', {
       controller: function postsController() {
         const vm = this;

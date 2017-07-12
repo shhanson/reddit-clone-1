@@ -1,11 +1,14 @@
 (function () {
-  angular.module('comments', [])
+  angular.module('app')
     .component('comments', {
       controller: function commentsController() {
         const vm = this;
 
-        vm.comments = [];
-        vm.comment = {};
+        vm.$onInit = function onInit() {
+          vm.comments = [];
+          vm.comment = {};
+        };
+
 
         vm.addComment = function addComment() {
           if (!vm.comment.body) {

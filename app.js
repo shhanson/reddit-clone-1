@@ -1,3 +1,3 @@
 (function () {
-  angular.module('app', ['posts', 'comments']);
+  angular.module('app', []);
 }());

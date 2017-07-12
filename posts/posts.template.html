@@ -21,10 +21,12 @@
 
 <section>
   <input type='text' ng-model='filterInput' id='filter' placeholder='Filter'>
+
 </section>
 
 <section ng-repeat='post in $ctrl.posts | filter: {title: filterInput}'>
 
+  <votes></votes>
   <img ng-src='{{ post.imageURL }}'>
   <h3>{{ post.title }}</h3>
   <h4>{{ post.author }}</h4>
