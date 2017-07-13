@@ -29,10 +29,10 @@
         };
 
         vm.addPost = function addPost() {
-          if (!vm.post.body || !vm.post.title || !vm.post.author || !vm.post.imageURL) {
-            console.error('Missing stuff!');
-            return;
-          }
+            // if (!vm.post.body || !vm.post.title || !vm.post.author || !vm.post.imageURL) {
+            //   console.error('Missing stuff!');
+            //   return;
+            // }
           vm.post.id = vm.posts.length;
           vm.post.date = new Date();
           vm.post.votes = 0;
@@ -65,7 +65,7 @@
           }
           if (secondsPast <= 86400) {
             const hoursPast = parseInt(secondsPast / 3600);
-            return `${hoursPast} hours${(hoursPast !== 1) ? 's' : ''} ago`;
+            return `${hoursPast} hour${(hoursPast !== 1) ? 's' : ''} ago`;
           }
           // if (secondsPast > 86400) {
           const day = timestamp.getDate();

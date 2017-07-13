@@ -10,10 +10,10 @@
         };
 
         vm.addComment = function addComment() {
-          if (!vm.comment.body) {
-            console.error('Comment cannot be blank!');
-            return;
-          }
+          // if (!vm.comment.body) {
+          //   console.error('Comment cannot be blank!');
+          //   return;
+          // }
           vm.comments.push(vm.comment);
           vm.comment = {};
         };
